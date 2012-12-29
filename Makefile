@@ -1,12 +1,12 @@
 
-TARGETS=hello hello_full
+TARGETS=hello
 
 .PHONY: clean all
 
 all: $(TARGETS)
 
 %: %.cpp
-	g++ $? -o $@ `pkg-config --libs allegro-5.1 allegro_image-5.1 allegro_primitives-5.1` 
+	g++ $? -o $@ -lSDL
 
 clean:
 	rm -f $(TARGETS)

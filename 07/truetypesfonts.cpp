@@ -127,7 +127,7 @@ int main(int argc, char** argv)
   init(&screen, "True Types Fonts");
 
   background = load_image( "background.png" );
-  font = load_font("lazy.ttf", 27);
+  font = load_font("DejaVuSans.ttf", 27);
 
   message = TTF_RenderText_Solid(font, "The quick brown foz jumps over the lazy dog.", textColor);
   if(message == NULL) {

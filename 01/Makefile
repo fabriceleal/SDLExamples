@@ -2,10 +2,9 @@
 # Assumes: target name == source name without extension
 OUTPUT=../out/01/
 TARGET=hello
-IMGS='*.bmp'
 FLAGS=-lSDL
 
-OUTPUT_IMAGES=$(patsubst ./%.bmp, $(OUTPUT)%.bmp , $(shell find -type f -name $(IMGS)) )
+OUTPUT_IMAGES=$(patsubst ./%.bmp, $(OUTPUT)%.bmp , $(shell find -type f -name '*.bmp') )
 
 .PHONY: clean all compile $(OUTPUT)
 

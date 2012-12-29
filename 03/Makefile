@@ -1,10 +1,10 @@
 
 # Assumes: target name == source name without extension
-OUTPUT=../out/02/
+OUTPUT=../out/03/
 TARGET=hello_optimized
-FLAGS=-lSDL
+FLAGS=-lSDL -lSDL_image
 
-OUTPUT_IMAGES=$(patsubst ./%.bmp, $(OUTPUT)%.bmp , $(shell find -type f -name '*.bmp') )
+OUTPUT_IMAGES=$(patsubst ./%.png, $(OUTPUT)%.png , $(shell find -type f -name '*.png') )
 
 .PHONY: clean all compile $(OUTPUT)
 
@@ -17,7 +17,7 @@ $(OUTPUT)$(TARGET): $(TARGET).cpp
 	g++ $? -o $@ $(FLAGS)
 
 # Copy images
-$(OUTPUT)%.bmp: %.bmp
+$(OUTPUT)%.png: %.png
 	mkdir -p $(OUTPUT)
 	cp $< $@
 

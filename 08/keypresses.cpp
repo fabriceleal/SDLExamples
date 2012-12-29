@@ -92,27 +92,6 @@ bool init(SDL_Surface** screen, std::string title)
   return true;
 }
 
-
-
-/*bool cleanup(int count, ...)
-{
-  va_list stuff_to_free;
-  va_start(stuff_to_free, count);
-
-  for(SDL_Surface* free_me : stuff_to_free) {
-    SDL_FreeSurface( free_me );
-  }
-  int j;
-  for(j = 0; j < count; ++j) {
-    SDL_Surface* to_free = va_arg(stuff_to_free, SDL_Surface*);
-    SDL_FreeSurface(to_free);
-  }
-
-  va_end(stuff_to_free);
-
-  SDL_Quit();
-  }*/
-
 int main(int argc, char** argv)
 {  
   SDL_Surface* screen = NULL;

@@ -12,7 +12,7 @@ int main(int argc, char** argv)
   SDL_Init( SDL_INIT_EVERYTHING );
 
   screen = SDL_SetVideoMode( 640, 480, 32, SDL_SWSURFACE );
-  hello = SDL_LoadBMP("imgs/helloworld.bmp");
+  hello = SDL_LoadBMP("helloworld.bmp");
 
   if(hello == NULL) {
     FAIL("Result of LoadBMP is null!\n");

@@ -59,8 +59,8 @@ int main(int argc, char** argv)
   
   SDL_WM_SetCaption("Hello World Optimized Image Loading and Blitting", NULL);
 
-  message = load_image( "imgs/message.bmp" );
-  background = load_image( "imgs/background.bmp" );
+  message = load_image( "message.bmp" );
+  background = load_image( "background.bmp" );
 
   apply_surface(   0,   0, background, screen );
   apply_surface( 320,   0, background, screen );

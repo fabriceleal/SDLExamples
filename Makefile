@@ -1,12 +1,13 @@
+DIRS= 01 02
 
-TARGETS=hello hello_optimized
+.PHONY: subdirs $(DIRS) clean
 
-.PHONY: clean all
+subdirs: $(DIRS)
 
-all: $(TARGETS)
+$(DIRS):
+	$(MAKE) -C $@
 
-%: %.cpp
-	g++ $? -o $@ -lSDL
+clean: 
+	rm -rf out/
 
-clean:
-	rm -f $(TARGETS)
+

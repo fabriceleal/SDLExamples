@@ -2,25 +2,26 @@
 # Assumes: target name == source name without extension
 OUTPUT=../out/02/
 TARGET=hello_optimized
+IMGS='*.bmp'
+FLAGS=-lSDL
 
-IMAGES=$(shell find -type f -name '*.bmp')
-OUTPUT_IMAGES=$(patsubst ./%.bmp, $(OUTPUT)%.bmp , $(IMAGES))
+OUTPUT_IMAGES=$(patsubst ./%.bmp, $(OUTPUT)%.bmp , $(shell find -type f -name $(IMGS)) )
 
-.PHONY: clean all
+.PHONY: clean all compile $(OUTPUT)
 
 # Everything
-all: $(OUTPUT)$(TARGET) $(OUTPUT_IMAGES)
+all: $(OUTPUT)$(TARGET) $(OUTPUT_IMAGES) $(OUTPUT)
 
 # Compile and copy executable
 $(OUTPUT)$(TARGET): $(TARGET).cpp
 	mkdir -p $(OUTPUT)
-	g++ $? -o $@ -lSDL
+	g++ $? -o $@ $(FLAGS)
 
 # Copy images
-$(OUTPUT)%.bmp: $(IMAGES)
+$(OUTPUT)%.bmp: %.bmp
 	mkdir -p $(OUTPUT)
 	cp $< $@
 
-# Clean executable, images
+# Removes executable, images
 clean:
-	rm -f $(OUTPUT)$(TARGET) $(OUTPUT_IMAGES)
+	rm -rf $(OUTPUT)

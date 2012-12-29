@@ -1,5 +1,5 @@
 
-TARGETS=hello
+TARGETS=hello hello_optimized
 
 .PHONY: clean all
 

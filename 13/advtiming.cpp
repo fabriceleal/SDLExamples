@@ -217,7 +217,7 @@ int main(int argc, char** argv)
 
     if( theTimer.is_started() ) {
       std::stringstream time;
-      time << "Timer: "<< theTimer.get_ticks();
+      time << "Timer: "<< theTimer.get_ticks() / 1000.f;
 
       seconds = TTF_RenderText_Solid( font, time.str().c_str(), textColor );
       

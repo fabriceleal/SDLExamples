@@ -107,7 +107,7 @@ int main(int argc, char** argv)
   Uint32 start = 0;
   bool running = true;
 
-  init(&screen, "Timing");
+  init(&screen, "Timing: Press (s) to start/stop timer");
 
   font = load_font("DejaVuSans.ttf", 27);
 

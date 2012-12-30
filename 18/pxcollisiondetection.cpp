@@ -237,7 +237,7 @@ public:
 
     shift_boxes();
 
-    if( y < 0 || x + Dot::DOT_HEIGHT > SCREEN_HEIGHT || 
+    if( y < 0 || y + Dot::DOT_HEIGHT > SCREEN_HEIGHT || 
 	check_collision( box, rects )) {
       y -= yVel;
       shift_boxes();

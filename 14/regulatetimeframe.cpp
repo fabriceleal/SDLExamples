@@ -180,7 +180,7 @@ int main(int argc, char** argv)
   init(&screen, "Regulating Frame Rate");
 
   font = load_font("DejaVuSans.ttf", 27);
-  message = TTF_RenderText_Solid( font, "Testing Frame Rate", textColor );
+  message = TTF_RenderText_Solid( font, "Testing Frame Rate (Enter to cap/uncap)", textColor );
 
   SDL_FillRect( screen, &screen->clip_rect, SDL_MapRGB(screen->format, 0x00, 0x00, 0x00));
 

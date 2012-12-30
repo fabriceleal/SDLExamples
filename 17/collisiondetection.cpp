@@ -266,9 +266,7 @@ public:
 int main(int argc, char** argv)
 {  
   SDL_Surface* screen = NULL; 
-  SDL_Surface* dot = NULL;
   SDL_Event event;
-  TTF_Font* font = NULL;
   SDL_Color textColor = { 255, 255, 255};
 
   SDL_Rect wall;
@@ -285,10 +283,6 @@ int main(int argc, char** argv)
   Timer fps;
 
   init( &screen, "Move the square (with collision detection) (up, left, down, right)" );
-
-  font = load_font( "DejaVuSans.ttf", 27 );
-  //message = TTF_RenderText_Solid( font, "Bla Bla", textColor );
-  dot = load_image( "dot.png" );
 
   SDL_FillRect( screen, &screen->clip_rect, SDL_MapRGB(screen->format, 0x00, 0x00, 0x00));
 
@@ -329,9 +323,9 @@ int main(int argc, char** argv)
 
   } // while(not quit)
 
-  //  SDL_FreeSurface( <the_surface> );
+  // SDL_FreeSurface( <the_surface> );
 
-  TTF_CloseFont( font );
+  // TTF_CloseFont( <the_font> );
   
   TTF_Quit();
   

@@ -19,7 +19,7 @@
   exit(-1)
 
 #define FAIL_MIX(msg)						\
-  fprintf(stderr, msg, "Mix Error: %s\n", Mix_GetError());  \
+  fprintf(stderr, msg "Mix Error: %s\n", Mix_GetError());  \
   exit(-1)
 
 
